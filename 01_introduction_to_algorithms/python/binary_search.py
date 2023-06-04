@@ -1,3 +1,5 @@
+import json
+
 class BinarySearch():
 
   def search_iterative(self, list, item):
@@ -48,19 +50,21 @@ class BinarySearch():
         # Element is not present in the array 
         return None
 
-#* Criando uma lista de 100 itens:
-list_with_100_items = []
-for cont in range (1, 101):
-  list_with_100_items.append(cont)
-print(list_with_100_items)
+#*importando o JSON:
+f = open('items.json', 'r')
+data = json.load(f)
+json_list = data['list_with_100_items']
 
 #* Executando o código
 if __name__ == "__main__":
   # We must initialize the class to use the methods of this class
   bs = BinarySearch()
-  my_list = list_with_100_items
+  my_list = json_list
   
-  print(bs.search_iterative(my_list, 80)) # => 1
+  print(bs.search_iterative(my_list, 161)) # => 1
 
   # 'None' means nil in Python. We use to indicate that the item wasn't found.
   print(bs.search_iterative(my_list, -1)) # => None
+
+#* Fechando o JSON:
+f.close()

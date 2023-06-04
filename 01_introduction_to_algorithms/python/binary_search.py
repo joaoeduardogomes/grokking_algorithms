@@ -1,6 +1,7 @@
 class BinarySearch():
 
   def search_iterative(self, list, item):
+    """O método vai retornar a posição do item que pesquisamos"""
     # low and high keep track of which part of the list you'll search in.
     low = 0
     high = len(list) - 1
@@ -47,12 +48,19 @@ class BinarySearch():
         # Element is not present in the array 
         return None
 
+#* Criando uma lista de 100 itens:
+list_with_100_items = []
+for cont in range (1, 101):
+  list_with_100_items.append(cont)
+print(list_with_100_items)
+
+#* Executando o código
 if __name__ == "__main__":
   # We must initialize the class to use the methods of this class
   bs = BinarySearch()
-  my_list = [1, 3, 5, 7, 9]
+  my_list = list_with_100_items
   
-  print(bs.search_iterative(my_list, 3)) # => 1
+  print(bs.search_iterative(my_list, 80)) # => 1
 
   # 'None' means nil in Python. We use to indicate that the item wasn't found.
   print(bs.search_iterative(my_list, -1)) # => None

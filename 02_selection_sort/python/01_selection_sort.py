@@ -13,7 +13,7 @@ def findSmallest(arr):
 # Sort array
 def selectionSort(arr):
   newArr = []
-  for i in range(len(arr)):
+  for _ in range(len(arr)):
       # Finds the smallest element in the array and adds it to the new array
       smallest = findSmallest(arr)
       newArr.append(arr.pop(smallest))
